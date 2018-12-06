@@ -19,7 +19,8 @@ public class Test01 extends Basic{
 
 	private static void test01() {
 	     try {
-	         Class.forName("org.postgresql.Driver");
+	    	 // JDK6以降は不要？
+//	         Class.forName("org.postgresql.Driver");
 
      	     //接続文字列
 		     String url = "jdbc:postgresql://localhost:15433/postgres";
@@ -47,9 +48,9 @@ public class Test01 extends Basic{
 		         }
 	         }
 	     }
-	     catch (ClassNotFoundException e) {
-	         e.printStackTrace();
-	     }
+//	     catch (ClassNotFoundException e) {
+//	         e.printStackTrace();
+//	     }
 	     catch (SQLException e){
 	         e.printStackTrace();
 	     }
