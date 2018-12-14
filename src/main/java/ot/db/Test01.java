@@ -23,9 +23,9 @@ public class Test01 extends Basic{
 //	         Class.forName("org.postgresql.Driver");
 
      	     //接続文字列
-		     String url = "jdbc:postgresql://localhost:15433/postgres";
+		     String url = "jdbc:postgresql://localhost:5433/test";
 		     String user = "postgres";
-		     String password = "";
+		     String password = "Administrator";
 	         try(Connection conn = DriverManager.getConnection(url, user, password)){
 		         //自動コミットOFF
 		         conn.setAutoCommit(false);
@@ -33,7 +33,7 @@ public class Test01 extends Basic{
 		         //SELECT文の実行
 		         try(Statement stmt = conn.createStatement()){
 			         //INSERT文の実行
-			         String sql = "INSERT INTO t01 VALUES (1)";
+			         String sql = "INSERT INTO t01(text) VALUES ('sample')";
 			         stmt.executeUpdate(sql);
 			         conn.commit();
 
